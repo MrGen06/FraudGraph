@@ -1,0 +1,68 @@
+
+@'
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+coverage.xml
+build/
+dist/
+
+# Machine learning artifacts
+models/*.joblib
+models/*.pkl
+models/*.pt
+models/*.pth
+models/*.onnx
+!models/README.md
+
+# Large datasets
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Small synthetic demo fixtures remain version-controlled
+!data/samples/*.csv
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Node.js and Vite
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+npm-debug.log*
+
+# IDE and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Docker data and logs
+*.log
+docker-data/
+neo4j-data/
+postgres-data/
+redis-data/
+
+# Temporary files
+*.tmp
+*.bak
+'@ | Set-Content -Path ".gitignore" -Encoding utf8
